@@ -1,0 +1,437 @@
+// Colors
+$blackFirst: #050505;
+$blaclSecond: #1F1F1F;
+$blackThird: #2D2D2D;
+$blackForth: #3A3A3A;
+
+$neutralFirst: #757575;
+$neutralSecond: #E9E9E9;
+$neutralThird: #F4F4F4;
+$white: #ffffff;
+
+$purple: #A445ED;
+$red: #FF5252;
+
+//mixins
+@mixin font($size, $lineHeight) {
+    font-size: $size;
+    $lineHeight: $lineHeight;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: $blackThird;
+    padding-bottom: 85px;
+    transition: background-color 0.5s ease;
+
+    #searchResult {
+        display: none;
+        transition: display 0.5s ease;
+    }
+
+    #emptyInput {
+        display: none;
+        color: $red;
+        margin-top: -10px;
+    }
+
+
+    &.darkMode {
+        background-color: $blackFirst;
+
+        h1,
+        h2,
+        li,
+        a {
+            color: $white;
+        }
+
+        hr {
+            border-color: $blackForth;
+        }
+
+        .form-select {
+            background-color: $blackFirst;
+            color: $white
+        }
+
+        .input-group {
+
+            button {
+                &.btn {
+                    &:hover {
+                        background-color: $blaclSecond;
+                    }
+                }
+
+            }
+
+
+            input {
+                background-color: $blaclSecond;
+                color: $white;
+
+
+                &::placeholder {
+                    background-color: $blaclSecond;
+                    color: $white;
+                }
+
+                &:focus {
+                    background-color: $blaclSecond;
+                    color: $white;
+                }
+
+                &:hover {
+                    background-color: $blaclSecond;
+                    color: $white;
+                }
+
+            }
+        }
+
+        .header {
+            svg {
+                path {
+                    stroke: $purple;
+                }
+            }
+
+
+        }
+
+        #wrongWord {
+            p {
+                color: $white;
+            }
+        }
+
+        .select-arrow-active,
+        .select-selected {
+            color: $white;
+        }
+
+        .select-items {
+            background: $blaclSecond;
+            box-shadow: 0px 5px 30px 0px $purple;
+            color: $white;
+        }
+    }
+
+    h1 {
+        @include font(32px, 150%);
+        font-weight: 700;
+
+        @media (min-width: 768px) {
+            font-size: 64px;
+        }
+    }
+
+    h2 {
+        @include font(18px, 150%);
+        font-style: italic;
+        font-weight: 700;
+        margin-bottom: 0;
+
+        @media (min-width: 768px) {
+            font-size: 24px;
+        }
+    }
+
+    h3 {
+        @include font(16px, 150%);
+        color: $neutralFirst;
+
+        @media (min-width: 768px) {
+            font-size: 20px;
+        }
+
+
+    }
+
+    h3.margin {
+        margin-bottom: 17px;
+        margin-top: 32px;
+    }
+
+    p {
+        margin-bottom: .5rem;
+
+        &#synonyms {
+            font-weight: 700;
+        }
+    }
+
+    blockquote {
+        margin-top: 0.5rem;
+
+        p {
+            color: $neutralFirst;
+            font-size: 15px;
+            line-height: 160%;
+        }
+    }
+
+    a {
+        color: $blackThird;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+
+    .fontM {
+        @include font(18px, 24px);
+    }
+
+    .fontS {
+        @include font(14px, 17px);
+    }
+
+    .purple {
+        color: $purple;
+    }
+
+
+    /*the container must be positioned relative:*/
+    .custom-select {
+        position: relative;
+        max-width: 200px;
+    }
+
+    .custom-select select {
+        display: none;
+        /*hide original SELECT element:*/
+    }
+
+    .select-selected {
+        background-color: transparent;
+        font-weight: 700;
+    }
+
+    /*style the arrow inside the select element:*/
+    .select-selected:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 0px;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: transparent transparent transparent transparent;
+        background-image: url(../images/icon-arrow-down.svg);
+        background-repeat: no-repeat;
+        text-align: right;
+        padding-right: 40px;
+        font-weight: 700;
+        height: 100%;
+    }
+
+    /*point the arrow upwards when the select box is open (active):*/
+    .select-selected.select-arrow-active:after {
+        border-color: transparent transparent transparent transparent;
+        rotate: 180deg;
+        top: -10px;
+        right: 27px;
+    }
+
+    /*style the items (options), including the selected item:*/
+    .select-items div,
+    .select-selected {
+        padding: 8px 16px;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    /*style items (options):*/
+    .select-items {
+        position: absolute;
+        background-color: $white;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        border-radius: 16px;
+        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.10);
+        font-weight: 700;
+
+    }
+
+    /*hide the items when the select box is closed:*/
+    .select-hide {
+        display: none;
+    }
+
+    .select-items div:hover,
+    .same-as-selected {
+        color: $purple;
+    }
+
+
+
+
+    .form-select {
+        border: none;
+        background-image: url(../images/icon-arrow-down.svg);
+        text-align: right;
+        padding-right: 40px;
+        font-weight: 700;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+
+        option {
+            border-radius: 30px;
+        }
+    }
+
+    .form-switch {
+
+        .form-check-input {
+            background-color: $neutralFirst;
+            width: 40px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+            cursor: pointer;
+
+            &:checked {
+                background-color: $purple;
+                border-color: $purple;
+
+
+            }
+        }
+    }
+
+    .input-group {
+        background-color: $neutralThird;
+        border-radius: 16px;
+        align-items: center;
+
+        input {
+            background-color: transparent;
+            border: none;
+            padding: 20px 24px;
+            font-weight: 700;
+            border-top-right-radius: 0.375rem !important;
+            border-bottom-right-radius: 0.375rem !important;
+            position: relative !important;
+            z-index: 0;
+            border-radius: 15px;
+            border-top-right-radius: 15px !important;
+            border-bottom-right-radius: 15px !important;
+
+            &::placeholder {
+                color: $blackThird;
+                opacity: 0.25;
+            }
+
+            &:active {
+                border: 1px solid $purple;
+                background-color: $neutralThird;
+
+            }
+
+            &:focus {
+                border: 1px solid $purple;
+                background-color: $neutralThird;
+                position: relative !important;
+                z-index: 0 !important;
+            }
+        }
+
+        button.btn {
+            border: none !important;
+            position: absolute !important;
+            right: 4px;
+            height: 50px;
+            z-index: 999 !important;
+
+
+            &:hover {
+                background-color: $neutralThird;
+                border: solid 1px $neutralThird;
+                border-left: none;
+            }
+
+            &:active {
+                background-color: $neutralThird !important;
+                border: solid 1px $neutralThird !important;
+            }
+        }
+    }
+
+
+    ul {
+        list-style: none;
+        padding-left: 15px;
+
+        li {
+            margin-bottom: 13px;
+
+            &::before {
+                content: "\2022";
+                color: $purple;
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+        }
+    }
+
+    .header {
+        padding-top: 28px;
+        padding-bottom: 28px;
+
+        .form-switchWrap {
+            border-left: 1px solid $neutralSecond;
+        }
+    }
+
+    .searchWord {
+        svg {
+            cursor: pointer;
+            width: 48px;
+            height: 48px;
+
+            @media (min-width: 768px) {
+                width: 75px;
+                height: 75px;
+            }
+
+            &:hover {
+                transition: fill 2s ease;
+
+                circle {
+                    fill: $purple;
+                    opacity: 1;
+                }
+
+                path {
+                    fill: $white;
+                }
+            }
+        }
+    }
+
+    #wrongWord {
+        height: 50vh;
+        align-content: center;
+        display: none;
+
+        p {
+            &.emoji {
+                font-size: 50px;
+            }
+
+            &.pLarge {
+                font-size: 20px;
+                font-weight: 700;
+            }
+        }
+    }
+
+
+}

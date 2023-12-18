@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <link href="./assets/build/styles.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Inter&family=Lora&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./assets/js/scripts.js"></script>
+  <script src="./assets/js/word-call.js"></script>
+
+  <title>Dictionary web app</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header row d-flex align-items-center">
+      <div class="col-2 col-md-6 col-lg-8">
+        <img src="./assets/images/logo.svg" alt="Dictionary logo" />
+      </div>
+      <div class="col-10 col-md-6 col-lg-4">
+        <div class="row d-flex align-items-center justify-content-end">
+          <div class="col-8 col-lg-8 custom-select">
+            <select id="fontChange" class="form-select" aria-label="Select font">
+              <option selected>Sans Serif</option>
+              <option value="sans-serif">Sans Serif</option>
+              <option value="serif">Serif</option>
+              <option value="mono">Mono</option>
+            </select>
+          </div>
+          <div class="col-2 col-lg-2 form-switchWrap">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="lightSwitch">
+            </div>
+          </div>
+          <div class="col-2 col-lg-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+              <path fill="none" stroke="#838383" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M1 10.449a10.544 10.544 0 0 0 19.993 4.686C11.544 15.135 6.858 10.448 6.858 1A10.545 10.545 0 0 0 1 10.449Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="search row">
+      <div class="col-12">
+        <div id="searchInputWrap" class="input-group mb-3">
+          <input type="text" id="searchWord" class="form-control" placeholder="Search for any word…"
+            aria-label="Search for any word…" aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+              <path fill="none" stroke="#A445ED" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="m12.663 12.663 3.887 3.887M1 7.664a6.665 6.665 0 1 0 13.33 0 6.665 6.665 0 0 0-13.33 0Z" />
+            </svg>
+          </button>
+          
+        </div>
+        <p id="emptyInput">Whoops, can’t be empty…</p>
+      </div>
+    </div>
+
+    <div id="searchResult" class="container-fluid">
+      <div class="searchWord row d-flex align-items-center">
+        <div class="col-9">
+          <h1></h1>
+          <p id="phonetic" class="purple"></p>
+        </div>
+        <div class="col-3 text-end">
+          <audio id="audioPlayer" controls style="display: none;">
+            <source src="" type="audio/mp3">
+            Your browser does not support the audio tag.
+          </audio>
+
+
+          <div id="customPlayButton" onclick="playAudio()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75" fill="none">
+              <circle opacity="0.25" cx="37.5" cy="37.5" r="37.5" fill="#A445ED" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M29 27V48L50 37.5L29 27Z" fill="#A445ED" />
+            </svg>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div id="appContainer"></div>
+
+      <div class="footer row">
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <hr>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <h3 class="underline">Source</h3>
+              <a id="source" href="" target="_blank"></a>
+              <img src="./assets/images/icon-new-window.svg" alt="new window icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wrongWord" class="row text-center">
+      <div class="col">
+        <p class="emoji">😕</p>
+        <p class="pLarge">No Definitions Found</p>
+        <p>Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+@charset "UTF-8";
+body {
+  font-family: "Inter", sans-serif;
+  color: #2D2D2D;
+  padding-bottom: 85px;
+  transition: background-color 0.5s ease;
+  /*the container must be positioned relative:*/
+  /*style the arrow inside the select element:*/
+  /*point the arrow upwards when the select box is open (active):*/
+  /*style the items (options), including the selected item:*/
+  /*style items (options):*/
+  /*hide the items when the select box is closed:*/
+}
+body #searchResult {
+  display: none;
+  transition: display 0.5s ease;
+}
+body #emptyInput {
+  display: none;
+  color: #FF5252;
+  margin-top: -10px;
+}
+body.darkMode {
+  background-color: #050505;
+}
+body.darkMode h1,
+body.darkMode h2,
+body.darkMode li,
+body.darkMode a {
+  color: #ffffff;
+}
+body.darkMode hr {
+  border-color: #3A3A3A;
+}
+body.darkMode .form-select {
+  background-color: #050505;
+  color: #ffffff;
+}
+body.darkMode .input-group button.btn:hover {
+  background-color: #1F1F1F;
+}
+body.darkMode .input-group input {
+  background-color: #1F1F1F;
+  color: #ffffff;
+}
+body.darkMode .input-group input::placeholder {
+  background-color: #1F1F1F;
+  color: #ffffff;
+}
+body.darkMode .input-group input:focus {
+  background-color: #1F1F1F;
+  color: #ffffff;
+}
+body.darkMode .input-group input:hover {
+  background-color: #1F1F1F;
+  color: #ffffff;
+}
+body.darkMode .header svg path {
+  stroke: #A445ED;
+}
+body.darkMode #wrongWord p {
+  color: #ffffff;
+}
+body.darkMode .select-arrow-active,
+body.darkMode .select-selected {
+  color: #ffffff;
+}
+body.darkMode .select-items {
+  background: #1F1F1F;
+  box-shadow: 0px 5px 30px 0px #A445ED;
+  color: #ffffff;
+}
+body h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  body h1 {
+    font-size: 64px;
+  }
+}
+body h2 {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  body h2 {
+    font-size: 24px;
+  }
+}
+body h3 {
+  font-size: 16px;
+  color: #757575;
+}
+@media (min-width: 768px) {
+  body h3 {
+    font-size: 20px;
+  }
+}
+body h3.margin {
+  margin-bottom: 17px;
+  margin-top: 32px;
+}
+body p {
+  margin-bottom: 0.5rem;
+}
+body p#synonyms {
+  font-weight: 700;
+}
+body blockquote {
+  margin-top: 0.5rem;
+}
+body blockquote p {
+  color: #757575;
+  font-size: 15px;
+  line-height: 160%;
+}
+body a {
+  color: #2D2D2D;
+}
+body .underline {
+  text-decoration: underline;
+}
+body .fontM {
+  font-size: 18px;
+}
+body .fontS {
+  font-size: 14px;
+}
+body .purple {
+  color: #A445ED;
+}
+body .custom-select {
+  position: relative;
+  max-width: 200px;
+}
+body .custom-select select {
+  display: none;
+  /*hide original SELECT element:*/
+}
+body .select-selected {
+  background-color: transparent;
+  font-weight: 700;
+}
+body .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 0px;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: transparent transparent transparent transparent;
+  background-image: url(../images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  text-align: right;
+  padding-right: 40px;
+  font-weight: 700;
+  height: 100%;
+}
+body .select-selected.select-arrow-active:after {
+  border-color: transparent transparent transparent transparent;
+  rotate: 180deg;
+  top: -10px;
+  right: 27px;
+}
+body .select-items div,
+body .select-selected {
+  padding: 8px 16px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+body .select-items {
+  position: absolute;
+  background-color: #ffffff;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 16px;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+body .select-hide {
+  display: none;
+}
+body .select-items div:hover,
+body .same-as-selected {
+  color: #A445ED;
+}
+body .form-select {
+  border: none;
+  background-image: url(../images/icon-arrow-down.svg);
+  text-align: right;
+  padding-right: 40px;
+  font-weight: 700;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+body .form-select option {
+  border-radius: 30px;
+}
+body .form-switch .form-check-input {
+  background-color: #757575;
+  width: 40px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+  cursor: pointer;
+}
+body .form-switch .form-check-input:checked {
+  background-color: #A445ED;
+  border-color: #A445ED;
+}
+body .input-group {
+  background-color: #F4F4F4;
+  border-radius: 16px;
+  align-items: center;
+}
+body .input-group input {
+  background-color: transparent;
+  border: none;
+  padding: 20px 24px;
+  font-weight: 700;
+  border-top-right-radius: 0.375rem !important;
+  border-bottom-right-radius: 0.375rem !important;
+  position: relative !important;
+  z-index: 0;
+  border-radius: 15px;
+  border-top-right-radius: 15px !important;
+  border-bottom-right-radius: 15px !important;
+}
+body .input-group input::placeholder {
+  color: #2D2D2D;
+  opacity: 0.25;
+}
+body .input-group input:active {
+  border: 1px solid #A445ED;
+  background-color: #F4F4F4;
+}
+body .input-group input:focus {
+  border: 1px solid #A445ED;
+  background-color: #F4F4F4;
+  position: relative !important;
+  z-index: 0 !important;
+}
+body .input-group button.btn {
+  border: none !important;
+  position: absolute !important;
+  right: 4px;
+  height: 50px;
+  z-index: 999 !important;
+}
+body .input-group button.btn:hover {
+  background-color: #F4F4F4;
+  border: solid 1px #F4F4F4;
+  border-left: none;
+}
+body .input-group button.btn:active {
+  background-color: #F4F4F4 !important;
+  border: solid 1px #F4F4F4 !important;
+}
+body ul {
+  list-style: none;
+  padding-left: 15px;
+}
+body ul li {
+  margin-bottom: 13px;
+}
+body ul li::before {
+  content: "•";
+  color: #A445ED;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+body .header {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+body .header .form-switchWrap {
+  border-left: 1px solid #E9E9E9;
+}
+body .searchWord svg {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+}
+@media (min-width: 768px) {
+  body .searchWord svg {
+    width: 75px;
+    height: 75px;
+  }
+}
+body .searchWord svg:hover {
+  transition: fill 2s ease;
+}
+body .searchWord svg:hover circle {
+  fill: #A445ED;
+  opacity: 1;
+}
+body .searchWord svg:hover path {
+  fill: #ffffff;
+}
+body #wrongWord {
+  height: 50vh;
+  align-content: center;
+  display: none;
+}
+body #wrongWord p.emoji {
+  font-size: 50px;
+}
+body #wrongWord p.pLarge {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=styles.css.map */
