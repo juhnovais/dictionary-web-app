@@ -20,55 +20,57 @@ body #emptyInput {
   color: #FF5252;
   margin-top: -10px;
 }
-body.darkMode {
-  background-color: #050505;
-}
-body.darkMode h1,
-body.darkMode h2,
-body.darkMode li,
-body.darkMode a {
-  color: #ffffff;
-}
-body.darkMode hr {
-  border-color: #3A3A3A;
-}
-body.darkMode .form-select {
-  background-color: #050505;
-  color: #ffffff;
-}
-body.darkMode .input-group button.btn:hover {
-  background-color: #1F1F1F;
-}
-body.darkMode .input-group input {
-  background-color: #1F1F1F;
-  color: #ffffff;
-}
-body.darkMode .input-group input::placeholder {
-  background-color: #1F1F1F;
-  color: #ffffff;
-}
-body.darkMode .input-group input:focus {
-  background-color: #1F1F1F;
-  color: #ffffff;
-}
-body.darkMode .input-group input:hover {
-  background-color: #1F1F1F;
-  color: #ffffff;
-}
-body.darkMode .header svg path {
-  stroke: #A445ED;
-}
-body.darkMode #wrongWord p {
-  color: #ffffff;
-}
-body.darkMode .select-arrow-active,
-body.darkMode .select-selected {
-  color: #ffffff;
-}
-body.darkMode .select-items {
-  background: #1F1F1F;
-  box-shadow: 0px 5px 30px 0px #A445ED;
-  color: #ffffff;
+@media (prefers-color-scheme: light) {
+  body.darkMode {
+    background-color: #050505;
+  }
+  body.darkMode h1,
+  body.darkMode h2,
+  body.darkMode li,
+  body.darkMode a {
+    color: #ffffff;
+  }
+  body.darkMode hr {
+    border-color: #3A3A3A;
+  }
+  body.darkMode .form-select {
+    background-color: #050505;
+    color: #ffffff;
+  }
+  body.darkMode .input-group button.btn:hover {
+    background-color: #1F1F1F;
+  }
+  body.darkMode .input-group input {
+    background-color: #1F1F1F;
+    color: #ffffff;
+  }
+  body.darkMode .input-group input::placeholder {
+    background-color: #1F1F1F;
+    color: #ffffff;
+  }
+  body.darkMode .input-group input:focus {
+    background-color: #1F1F1F;
+    color: #ffffff;
+  }
+  body.darkMode .input-group input:hover {
+    background-color: #1F1F1F;
+    color: #ffffff;
+  }
+  body.darkMode .header svg path {
+    stroke: #A445ED;
+  }
+  body.darkMode #wrongWord p {
+    color: #ffffff;
+  }
+  body.darkMode .select-arrow-active,
+  body.darkMode .select-selected {
+    color: #ffffff;
+  }
+  body.darkMode .select-items {
+    background: #1F1F1F;
+    box-shadow: 0px 5px 30px 0px #A445ED;
+    color: #ffffff;
+  }
 }
 body h1 {
   font-size: 32px;
