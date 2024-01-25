@@ -20,7 +20,7 @@ body #emptyInput {
   color: #FF5252;
   margin-top: -10px;
 }
-@media (prefers-color-scheme: light) {
+
   body.darkMode {
     background-color: #050505;
   }
@@ -71,7 +71,7 @@ body #emptyInput {
     box-shadow: 0px 5px 30px 0px #A445ED;
     color: #ffffff;
   }
-}
+
 body h1 {
   font-size: 32px;
   font-weight: 700;
